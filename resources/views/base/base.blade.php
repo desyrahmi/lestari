@@ -1,0 +1,13 @@
+<html>
+<head>
+	<title>@yield('title')</title>
+	@yield('moreStyles')
+</head>
+<body>
+	@yield('navbar')
+	<div>
+		@yield('content')
+	</div>
+	@yield('moreScripts')
+</body>
+</html>
