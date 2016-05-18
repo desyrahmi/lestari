@@ -29,6 +29,11 @@ Route::group(['middleware' => ['web']], function (){
 			Route::get('/user/add', ['uses' => 'UserController@addIndex','as' => 'user.add.index']);
 			Route::post('/user/add', ['uses' => 'UserController@create','as' => 'user.add.create']);
 			Route::get('/user/delete/{id}', ['uses' => 'UserController@delete', 'as' => 'user.delete']);
+
+			Route::get('/project', ['uses' => 'ProjectController@index','as' => 'project.show']);
+			Route::get('/project/add', ['uses' => 'ProjectController@addIndex','as' => 'project.add.index']);
+			Route::post('/project/add', ['uses' => 'ProjectController@create','as' => 'project.add.create']);
+			Route::get('/project/delete/{id}', ['uses' => 'ProjectController@delete', 'as' => 'project.delete']);
 		});
 	});
 	

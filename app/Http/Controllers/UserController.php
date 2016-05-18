@@ -48,7 +48,7 @@ class UserController extends Controller
     	$user->phone = $data['phone'];
     	$user->address = $data['address'];
     	$user->email = $data['email'];
-    	$user->password = $data['password'];
+    	$user->password = Hash::make($data['password']);
     	$user->role_id = $data['role_id'];
     	
     	if($user->save()){
