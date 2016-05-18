@@ -15,6 +15,10 @@
 //     return view('welcome');
 // });
 
+Route::get('mypage', function(){
+	return view('mypage');
+});
+
 Route::group(['middleware' => ['web']], function (){
 	Route::group(['middleware' => ['guest']], function (){
 		Route::get('/login', ['uses' => 'AuthController@index','as' => 'auth.index']);
