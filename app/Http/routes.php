@@ -38,6 +38,16 @@ Route::group(['middleware' => ['web']], function (){
 			Route::get('/project/add', ['uses' => 'ProjectController@addIndex','as' => 'project.add.index']);
 			Route::post('/project/add', ['uses' => 'ProjectController@create','as' => 'project.add.create']);
 			Route::get('/project/delete/{id}', ['uses' => 'ProjectController@delete', 'as' => 'project.delete']);
+
+			Route::get('/article', ['uses' => 'ArticleController@index','as' => 'article.show']);
+			Route::get('/article/add', ['uses' => 'ArticleController@addIndex','as' => 'article.add.index']);
+			Route::post('/article/add', ['uses' => 'ArticleController@create','as' => 'article.add.create']);
+			Route::get('/article/delete/{id}', ['uses' => 'ArticleController@delete', 'as' => 'article.delete']);
+
+			Route::get('/comment', ['uses' => 'CommentController@index','as' => 'comment.show']);
+			Route::get('/comment/add', ['uses' => 'CommentController@addIndex','as' => 'comment.add.index']);
+			Route::post('/comment/add', ['uses' => 'CommentController@create','as' => 'comment.add.create']);
+			Route::get('/comment/delete/{id}', ['uses' => 'CommentController@delete', 'as' => 'comment.delete']);
 		});
 	});
 	
