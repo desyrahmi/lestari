@@ -48,11 +48,17 @@ Route::group(['middleware' => ['web']], function (){
 			Route::get('/comment/add', ['uses' => 'CommentController@addIndex','as' => 'comment.add.index']);
 			Route::post('/comment/add', ['uses' => 'CommentController@create','as' => 'comment.add.create']);
 			Route::get('/comment/delete/{id}', ['uses' => 'CommentController@delete', 'as' => 'comment.delete']);
-
+			
 			Route::get('/event', ['uses' => 'EventController@index','as' => 'event.show']);
 			Route::get('/event/add', ['uses' => 'EventController@addIndex','as' => 'event.add.index']);
 			Route::post('/event/add', ['uses' => 'EventController@create','as' => 'event.add.create']);
 			Route::get('/event/delete/{id}', ['uses' => 'EventController@delete', 'as' => 'event.delete']);
+
+
+			Route::get('/photo', ['uses' => 'PhotoController@index','as' => 'photo.show']);
+			Route::get('/photo/add', ['uses' => 'PhotoController@addIndex','as' => 'photo.add.index']);
+			Route::post('/photo/add', ['uses' => 'PhotoController@create','as' => 'photo.add.create']);
+			Route::get('/photo/delete/{id}', ['uses' => 'PhotoController@delete', 'as' => 'photo.delete']);
 		});
 	});
 	
