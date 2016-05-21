@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Validator;
 use Session;
@@ -96,18 +97,27 @@ class UserController extends Controller
         $validator = Validator::make(Input::all(), $rules);
         $data = Input::all();
         if ($validator->fails()) {
-            Session::flash('fail', 'Gagal menambahkan user');
+            Session::flash('fail', 'Gagal mengupdate user');
             return redirect()->route('user.edit.show',['id'=>$data['id']]);
         }
 
         $user = User::find($data['id']);
-        dd($user);
-        if ($user->save()) {
-            Session::flash('success', 'User berhasil ditambahkan');
-            return redirect()->route('user.edit.show',['id'=>$data['id']]);
-        } else {
-            Session::flash('fail', 'Gagal menambahkan user');
-            return redirect()->route('user.edit.show',['id'=>$data['id']]);
-        }
+//        dd($user);
+        DB::table('users')->where('id' , $data['id'])->update([
+            'name' => $data['name'],
+            'phone' => $data['phone'],
+            'address' => $data['address'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'role_id' => $data['role_id'],
+        ]);
+        return redirect()->route('user.edit.show', ['id' => $data['id']]);
+//        if ($user->save()) {
+//            Session::flash('success', 'Berhasil');
+//            return redirect()->route('user.edit.show',['id'=>$data['id']]);
+//        } else {
+//            Session::flash('fail', 'Gagal  updateuser');
+//            return redirect()->route('user.edit.show',['id'=>$data['id']]);
+//        }
     }
 }
