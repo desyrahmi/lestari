@@ -41,6 +41,11 @@ Route::group(['middleware' => ['web']], function (){
 			Route::post('/project/add', ['uses' => 'ProjectController@create','as' => 'project.add.create']);
 			Route::get('/project/delete/{id}', ['uses' => 'ProjectController@delete', 'as' => 'project.delete']);
 
+			Route::get('/donate', ['uses' => 'DonateController@index','as' => 'donate.show']);
+			Route::get('/donate/add', ['uses' => 'DonateController@addIndex','as' => 'donate.add.index']);
+			Route::post('/donate/add', ['uses' => 'DonateController@create','as' => 'donate.add.create']);
+			Route::get('/donate/delete/{id}', ['uses' => 'DonateController@delete', 'as' => 'donate.delete']);
+
 			Route::get('/article', ['uses' => 'ArticleController@index','as' => 'article.show']);
 			Route::get('/article/add', ['uses' => 'ArticleController@addIndex','as' => 'article.add.index']);
 			Route::post('/article/add', ['uses' => 'ArticleController@create','as' => 'article.add.create']);
