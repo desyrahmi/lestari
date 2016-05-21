@@ -6,9 +6,9 @@
     <ul>
         @foreach($donates as $donate)
             <li>
-                {{$donate->user_id}}
+                {{$donate->project_id}}
                 <br>
-                {{$donate->comment}}
+                {{$donate->donate}}
                 <a href="{{route('donate.delete', ['id' => $donate->id])}}">Delete</a>
             </li>
         @endforeach
