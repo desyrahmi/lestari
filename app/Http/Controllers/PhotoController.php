@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Input;
 use Validator;
 use Session;
 use Hash;
+use File;
+use Response;
 
 class PhotoController extends Controller
 {
@@ -22,7 +24,7 @@ class PhotoController extends Controller
 //        dd(Auth::user()->id);
         $rules = array(
             'name' => 'required',
-
+            'photo' => 'required',
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -41,14 +43,14 @@ class PhotoController extends Controller
         $file = Input::file('photo');
         $photo = new Photo();
         $photo->name = $data['name'];
+        $photo->extension = $file->getClientOriginalExtension();
         $photo->save();
         $file_name = (string)$photo->id.".".$file->getClientOriginalExtension();
 
         $destination_path = storage_path().'/foto';
-        $photo->update(['name' => $file_name]);
+//        $photo->update(['name' => $file_name]);
         // dd($destination_path);
         if(!$file->move($destination_path, $file_name)){
-            return;
             Session::flash('fail', 'Gagal mengupload logo');
             $photo->delete();
             return redirect()->back()->withInput(Input::all());
@@ -68,5 +70,15 @@ class PhotoController extends Controller
         $photo->delete();
 
         return redirect()->route('photo.show');
+    }
+
+    public function getPhoto($fileName) {
+        $path = storage_path() .'/foto'. '/' . $fileName;
+        if(!File::exists($path)) abort(404);
+        $file = File::get($path);
+        $type = File::mimeType($path);
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+        return $response;
     }
 }

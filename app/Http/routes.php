@@ -32,6 +32,8 @@ Route::group(['middleware' => ['web']], function (){
 			Route::get('/user', ['uses' => 'UserController@index','as' => 'user.show']);
 			Route::get('/user/add', ['uses' => 'UserController@addIndex','as' => 'user.add.index']);
 			Route::post('/user/add', ['uses' => 'UserController@create','as' => 'user.add.create']);
+			Route::get('/user/edit/{id}', ['uses' => 'UserController@showEditForm','as' => 'user.edit.show']);
+			Route::post('/user/edit', ['uses' => 'UserController@update','as' => 'user.edit']);
 			Route::get('/user/delete/{id}', ['uses' => 'UserController@delete', 'as' => 'user.delete']);
 
 			Route::get('/project', ['uses' => 'ProjectController@index','as' => 'project.show']);
@@ -59,6 +61,7 @@ Route::group(['middleware' => ['web']], function (){
 			Route::get('/photo/add', ['uses' => 'PhotoController@addIndex','as' => 'photo.add.index']);
 			Route::post('/photo/add', ['uses' => 'PhotoController@create','as' => 'photo.add.create']);
 			Route::get('/photo/delete/{id}', ['uses' => 'PhotoController@delete', 'as' => 'photo.delete']);
+			Route::get('/photo/get/{fileName}', ['uses' => 'PhotoController@getPhoto', 'as' => 'photo.get']);
 		});
 	});
 	
