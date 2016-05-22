@@ -36,7 +36,7 @@ class AuthController extends Controller
                 'password' => Input::get('password')
             );
 
-            if (Auth::attempt(array('email' => $userdata['email'], 'password' => $userdata['password']))) {
+            if (Auth::attempt(array('email' => $userdata['email'], 'password' => $userdata['password']), true)) {
                 echo 'berhasil login';
                 return redirect()->route('admin.index');
             } else {

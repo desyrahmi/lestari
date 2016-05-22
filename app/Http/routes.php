@@ -51,6 +51,8 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('/article', ['uses' => 'ArticleController@index', 'as' => 'article.show']);
             Route::get('/article/add', ['uses' => 'ArticleController@addIndex', 'as' => 'article.add.index']);
             Route::post('/article/add', ['uses' => 'ArticleController@create', 'as' => 'article.add.create']);
+            Route::get('/article/edit/{id}', ['uses' => 'ArticleController@showEditForm', 'as' => 'article.edit.show']);
+            Route::post('/article/edit', ['uses' => 'ArticleController@update', 'as' => 'article.edit']);
             Route::get('/article/delete/{id}', ['uses' => 'ArticleController@delete', 'as' => 'article.delete']);
 
             Route::get('/comment', ['uses' => 'CommentController@index', 'as' => 'comment.show']);
