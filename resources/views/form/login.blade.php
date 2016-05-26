@@ -50,7 +50,7 @@
 				</div>
 				<div class="panel-body">
 					<form action="{{route('auth.doLogin')}}" method="post">
-
+						{{csrf_field()}}
 						<div class="form-group">
 							<input type="email" name="email" class="form-control input-sm" placeholder="Email Address">
 						</div>

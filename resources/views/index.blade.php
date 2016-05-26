@@ -15,7 +15,7 @@
             <div class="navbar-collapse collapse" id="navbar-main">
                 <ul class="navbar-right nav-button">
                     <li><a class="btn btn-default" href="register.html">Register</a></li>
-                    <li><a class="btn btn-primary" href="login.html">Log-in</a></li>
+                    <li><a class="btn btn-primary" href="{{route('auth.index')}}">Log-in</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#" target="_blank">Artikel</a></li>
