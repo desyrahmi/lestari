@@ -15,30 +15,46 @@
 
 {{--@section('title', 'login')--}}
 
-@section('navbar')
-	<div class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<!-- Logo -->
-			<div class="navbar-header">
-				<a href="index.html" class="navbar-brand">Lestari.in</a>
-				<button class="navbar-toggle" type="button" data-toggle="collapse" data->
-				</button>
-			</div>
+{{--@section('navbar')--}}
+	{{--<div class="navbar navbar-default navbar-fixed-top">--}}
+		{{--<div class="container">--}}
+			{{--<!-- Logo -->--}}
+			{{--<div class="navbar-header">--}}
+				{{--<a href="index.html" class="navbar-brand">Lestari.in</a>--}}
+				{{--<button class="navbar-toggle" type="button" data-toggle="collapse" data->--}}
+				{{--</button>--}}
+			{{--</div>--}}
 
-			<div class="navbar-collapse collapse" id="navbar-main">
-				<ul class="navbar-right nav-button">
-					<li><a class="btn btn-default" href="register.html">Register</a></li>
-					<li><a class="btn btn-primary" href="login.html">Log-in</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#" target="_blank">Artikel</a></li>
-					<li><a href="#" target="_blank">Event</a></li>
-					<li><a href="#" target="_blank">Donasi</a></li>
-					<li><a href="#" target="_blank">FAQ</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+			{{--<div class="navbar-collapse collapse" id="navbar-main">--}}
+				{{--<ul class="navbar-right nav-button">--}}
+					{{--<li><a class="btn btn-default" href="register.html">Register</a></li>--}}
+					{{--<li><a class="btn btn-primary" href="login.html">Log-in</a></li>--}}
+				{{--</ul>--}}
+				{{--<ul class="nav navbar-nav navbar-right">--}}
+					{{--<li><a href="#" target="_blank">Artikel</a></li>--}}
+					{{--<li><a href="#" target="_blank">Event</a></li>--}}
+					{{--<li><a href="#" target="_blank">Donasi</a></li>--}}
+					{{--<li><a href="#" target="_blank">FAQ</a></li>--}}
+				{{--</ul>--}}
+			{{--</div>--}}
+		{{--</div>--}}
+	{{--</div>--}}
+{{--@endsection--}}
+@section('moreStyles')
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Log in</title>
+
+	<!-- Bootstrap -->
+	<link href="css/readable.bootstrap.min.css" rel="stylesheet">
+	<link href="css/form.css" rel="stylesheet">
+	<style>
+		body {
+			background-image:url(../img/green_cup.png);
+		}
+	</style>
 @endsection
 
 @section('content')
