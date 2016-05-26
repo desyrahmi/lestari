@@ -2,31 +2,35 @@
 
 @section('title', 'Lestari')
 
-@section('content')
-        <!-- Navbar start Here -->
-<div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!-- Logo -->
-        <div class="navbar-header">
-            <a href="index.html" class="navbar-brand">Lestari.in</a>
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data->
-            </button>
-        </div>
+@section('navbar')
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">Lestari.in</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data->
+                </button>
+            </div>
 
-        <div class="navbar-collapse collapse" id="navbar-main">
-            <ul class="navbar-right nav-button">
-                <li><a class="btn btn-default" href="register.html">Register</a></li>
-                <li><a class="btn btn-primary" href="login.html">Log-in</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" target="_blank">Artikel</a></li>
-                <li><a href="#" target="_blank">Event</a></li>
-                <li><a href="#" target="_blank">Donasi</a></li>
-                <li><a href="#" target="_blank">FAQ</a></li>
-            </ul>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="navbar-right nav-button">
+                    <li><a class="btn btn-default" href="register.html">Register</a></li>
+                    <li><a class="btn btn-primary" href="login.html">Log-in</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" target="_blank">Artikel</a></li>
+                    <li><a href="#" target="_blank">Event</a></li>
+                    <li><a href="#" target="_blank">Donasi</a></li>
+                    <li><a href="#" target="_blank">FAQ</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
+@endsection
+
+@section('content')
+        <!-- Navbar start Here -->
+
 <!-- End of Navbar -->
 
 <!-- Jumbotron -->
