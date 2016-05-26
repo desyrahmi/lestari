@@ -8,7 +8,7 @@ class Photo extends Model
 {
     protected $table = 'photos';
     protected $dates = ['created_at','updated_at'];
-    protected $fillable = ['name'];
+    protected $fillable = ['name','extension'];
 
     public function projects(){
     	return $this->belongsToMany('App\Project','photo_project','photo_id','project_id');

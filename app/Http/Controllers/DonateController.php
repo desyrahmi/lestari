@@ -14,7 +14,7 @@ use Session;
 use Hash;
 
 
-class CommentController extends Controller
+class DonateController extends Controller
 {
     public function addIndex(){
         $projects = Project::get();
@@ -24,26 +24,26 @@ class CommentController extends Controller
     public function create(){
 //        dd(Auth::user()->id);
         $rules = array(
-            'comment' => 'required',
+            'total' => 'required',
             'project_id' => 'required',
         );
 
         $validator = Validator::make(Input::all(), $rules);
 
         if($validator->fails()){
-            Session::flash('fail','Gagal menambahkan project');
+            Session::flash('fail','Gagal menambahkan donate');
             return redirect()->route('donate.add.index');
         }
 
         $data = Input::all();
         /*
-        if(Article::where('email', $data['email'])->count()>0){
-            Session::flash('fail', 'Gagal menamnahkan article.');
-            return redirect()->route('article.add.index');
+        if(Donate::where('email', $data['email'])->count()>0){
+            Session::flash('fail', 'Gagal menamnahkan donate.');
+            return redirect()->route('donate.add.index');
         }*/
 
         $donate = new Donate();
-        $donate->donate = $data['donate'];
+        $donate->total = $data['total'];
         $donate->user_id = Auth::user()->id;
         $donate->project_id = $data['project_id'];
 
@@ -51,7 +51,7 @@ class CommentController extends Controller
             Session::flash('success', 'Donate berhasil ditambahkan');
             return redirect()->route('donate.add.index');
         } else {
-            Session::flash('fail', 'Gagal menambahkan Donate');
+            Session::flash('fail', 'Gagal menambahkan donate');
             return redirect()->route('donate.add.index');
         }
     }

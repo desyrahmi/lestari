@@ -27,7 +27,6 @@ class AuthController extends Controller
         $validator = Validator::make(Input::all(), $rules);
         if ($validator->fails()) {
             echo 'gagal lewat validator';
-            return;
             return view('login')
                 ->withErrors($validator)
                 ->withInput(Input::except('password'));
@@ -37,13 +36,11 @@ class AuthController extends Controller
                 'password' => Input::get('password')
             );
 
-            if (Auth::attempt(array('email' => $userdata['email'], 'password' => $userdata['password']))) {
+            if (Auth::attempt(array('email' => $userdata['email'], 'password' => $userdata['password']), true)) {
                 echo 'berhasil login';
-                return;
                 return redirect()->route('admin.index');
             } else {
                 echo 'gagal login';
-                return;
                 return view('login')
                     ->withErrors(['Email atau Password salah'])
                     ->withInput(Input::except('password'));

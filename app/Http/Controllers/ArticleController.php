@@ -6,7 +6,7 @@ use App\Article;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Validator;
 use Session;
@@ -22,7 +22,7 @@ class ArticleController extends Controller
 //        dd(Auth::user()->id);
         $rules = array(
             'title' => 'required',
-            'content' => 'required',
+            'post' => 'required',
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -41,7 +41,7 @@ class ArticleController extends Controller
 
         $article = new Article();
         $article->title = $data['title'];
-        $article->content = $data['content'];
+        $article->post = $data['post'];
         $article->user_id = Auth::user()->id;
 
         if($article->save()){
@@ -63,5 +63,33 @@ class ArticleController extends Controller
         $article->delete();
 
         return redirect()->route('article.show');
+    }
+
+    public function showEditForm($id)
+    {
+        $article = Article::find($id);
+        return view('form.updatearticle', ['article' => $article]);
+    }
+
+    public function update()
+    {
+        $rules = array(
+            'title' => 'required',
+            'post' => 'required',
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+        $data = Input::all();
+        if ($validator->fails()) {
+            Session::flash('fail', 'Gagal mengupdate article');
+            return redirect()->route('article.edit.show',['id'=>$data['id']]);
+        }
+
+        $article = Article::find($data['id']);
+        DB::table('articles')->where('id' , $data['id'])->update([
+            'title' => $data['title'],
+            'post' => $data['post'],
+        ]);
+        return redirect()->route('article.edit.show', ['id' => $data['id']]);
     }
 }
