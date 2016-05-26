@@ -1,0 +1,97 @@
+.logo {
+	max-width: 50px;
+	max-height: 50px;
+	float: left;
+	padding-top:-10px;
+	padding-right: 5px;
+	padding-bottom: 20px;
+}
+
+.nav > li{
+	size: 100px 50px;
+}
+
+.navbar {
+	background-color: #d5ff80;
+}
+
+.nav-button {
+	list-style: none;	
+	padding-left: 10px;
+}
+
+.nav-button > li {
+	display: inline-block;
+	margin-top : 15px;
+}
+	
+.jumbotron {
+	width : 100%;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.banner {
+	background-image:url('../img/forest.jpg');
+	min-height: 550px;
+	color: #FFFFFF;
+	text-align: center;	
+}
+
+.banner-deskripsi {
+	margin-top: 200px;
+}
+
+.lestari-banner > p {
+
+	font-size: 50px;
+}
+
+.home-artikel {
+	background-color: #FFFFFF;
+	padding-right: 10px;
+}
+
+.bag-artikel {
+	background-color: #f6f6f6;
+	padding-bottom: 20px;
+}
+
+.home-artikel {
+	padding-top: 50px;
+	padding-bottom: 30px;
+}
+
+.donasi-jumbotron {
+	min-height: 900px;
+}
+
+.donasi {
+	min-height: 400px;
+	max-height: 400px;
+}
+
+.footer {
+	color : #f9f9f9;
+	padding-bottom: 10px;
+	background-color: #404040;
+}
+
+.lestari {
+	color: #f9f9f9;
+	font-size: 50px;
+	font-style: italic;
+	margin: 20px 0px;
+}
+
+.judul {
+	margin-top : 20px;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.copyright {
+	color : #f9f9f9;
+	background-color: #404040;
+}	
+
