@@ -22,8 +22,6 @@
         <!-- Logo -->
         <div class="navbar-header">
           <a href="index.html" class="navbar-brand">Lestari.in</a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data->
-          </button>
         </div>
 
         <div class="navbar-collapse collapse" id="navbar-main">
@@ -32,7 +30,7 @@
             <li><a class="btn btn-primary" href="login.html">Log-in</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" target="_blank">Artikel</a></li>
+            <li><a href="artikel.html">Artikel</a></li>
             <li><a href="#" target="_blank">Event</a></li>
             <li><a href="#" target="_blank">Donasi</a></li>
             <li><a href="#" target="_blank">FAQ</a></li>
@@ -41,6 +39,43 @@
       </div>
     </div>
     <!-- End of Navbar -->
+
+ <!--Login Modal-->
+  <div role="dialog" aria-labelledby="loginmodal" class="modal fade loginmodal">
+    <div role="document" class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button>
+          <h2 id="loginmodal" class="modal-title">Log In</h2>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="row" role="form" method="POST" action="http://wecare.id/auth/login">
+              <input type="hidden" name="_token" value="zDfNJ5PRxEKyzYV3crhNuNsCRjQt4KqHt3CZ0df7">
+              <div class="input-group"><span id="basic-addon1" class="input-group-addon">Email</span>
+                <input name="email" type="text" placeholder="contoh@mail.com" aria-describedby="basic-addon1" class="form-control" value=""> <span class="focus-indicator"></span>
+              </div>
+              <div class="input-group"><span id="basic-addon2" class="input-group-addon">Password</span>
+                <input name="password" type="password" placeholder="••••••••••••" aria-describedby="basic-addon2" class="form-control"> <span class="focus-indicator"></span>
+              </div>
+              <button type="submit" class="btn primary full-width">Log In</button>
+
+              <div class="text-center">
+                <br />
+                Belum punya akun WeCare.id? <a class="btn-link" href="#" data-toggle="modal" data-target=".signupmodal" data-dismiss="modal">Daftar di sini</a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="http://wecare.id/password/email" class="btn-link">Lupa Password?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Modal -->
+
+
 
     <!-- Jumbotron -->
     <div class="jumbotron banner">
@@ -148,7 +183,7 @@
               <div class="progress">
                 <div class="progress-bar progress-bar-warning" style="width: 40%"></div>
               </div>
-              <a class="btn btn-primary btn-block">donasi</a>
+              <a class="btn btn-primary btn-block" href="donasi.html">donasi</a>
             </div>
           </div>
         </div>

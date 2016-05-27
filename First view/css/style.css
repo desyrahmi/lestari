@@ -1,3 +1,4 @@
+/* Navbar */
 .logo {
 	max-width: 50px;
 	max-height: 50px;
@@ -5,32 +6,34 @@
 	padding-top:-10px;
 	padding-right: 5px;
 	padding-bottom: 20px;
+	color : #FFFFFF;
 }
-
 .nav > li{
 	size: 100px 50px;
 }
-
 .navbar {
-	background-color: #d5ff80;
+	background-color: #388E3C;
 }
-
 .nav-button {
 	list-style: none;	
 	padding-left: 10px;
 }
-
 .nav-button > li {
 	display: inline-block;
 	margin-top : 15px;
 }
-	
+/* End of Navbar */
+
+
+
+/* Bagian Jumbotron */	
 .jumbotron {
 	width : 100%;
 	padding-left: 0px;
 	padding-right: 0px;
 }
 
+/* Home */
 .banner {
 	background-image:url('../img/forest.jpg');
 	min-height: 550px;
@@ -38,17 +41,44 @@
 	text-align: center;	
 }
 
+.donasi-jumbotron {
+	min-height: 900px;
+}
+
 .banner-deskripsi {
 	margin-top: 200px;
 }
 
 .lestari-banner > p {
-
 	font-size: 50px;
 }
 
+.jumbo-artikel {
+    padding-top: 65px;
+    margin-bottom: 0px;
+}
+
+.jumbo-donate {
+    padding-top: 65px;
+    margin-bottom: 0px;
+    background-color: #aa863a;
+    color : #FFFFFF;
+}
+
+.slidebar {
+	margin-bottom: 0px;
+}
+
+.content {
+	margin-bottom: 0px;
+}
+
+h1.nama-donasi {
+	color: #FFFFFF;
+}
+
 .home-artikel {
-	background-color: #FFFFFF;
+	background-color: #F6F6F6;
 	padding-right: 10px;
 }
 
@@ -62,10 +92,6 @@
 	padding-bottom: 30px;
 }
 
-.donasi-jumbotron {
-	min-height: 900px;
-}
-
 .donasi {
 	min-height: 400px;
 	max-height: 400px;
@@ -74,7 +100,7 @@
 .footer {
 	color : #f9f9f9;
 	padding-bottom: 10px;
-	background-color: #404040;
+	background-color: #291C11;
 }
 
 .lestari {
@@ -92,6 +118,6 @@
 
 .copyright {
 	color : #f9f9f9;
-	background-color: #404040;
+	background-color: #291C11;
 }	
 
